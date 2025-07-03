@@ -14,28 +14,7 @@
 #include <sys/stat.h>  
 #include <sys/types.h>  
 
-
-/*
-cd bash
-./configure --prefix=$(realpath ../bash-install)
-make install
-cd examples/loadables/
-gcc -fPIC -DHAVE_CONFIG_H -DSHELL -g -Os -Wno-parentheses -Wno-format-security -I../../../bash-install/include/bash -I../../include -I../../builtins -c -o escape.o escape.c
-gcc -shared -Wl,-soname,escape -I../../../bash-install/include/bash -o escape escape.o
- */
-
-
-   
-/*  
-** You should set NEED_FCHDIR to 1 if the chroot() on your  
-** system changes the working directory of the calling  
-** process to the same directory as the process was chroot()ed  
-** to.  
-**  
-** It is known that you do not need to set this value if you  
-** running on Solaris 2.7 and below.  
-**  
-*/  
+// Mostly taken from http://www.unixwiz.net/techtips/mirror/chroot-break.html
 #define NEED_FCHDIR 1
    
 #define TEMP_DIR "waterbuffalo"  

