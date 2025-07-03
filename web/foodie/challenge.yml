@@ -1,0 +1,16 @@
+# Required sections, should be self-explanatory.
+name: Foodie
+author: dprakosa
+category: web
+description: Hmm I'm craving some scones, what ingredients do I need?
+
+type: dynamic
+extra:
+    initial: 400
+    decay: 50
+    minimum: 100
+
+# Specifies flag(s) for this challenge.
+# You must provide at least one.
+flags:
+    - SCONES{z3rver_z1de_templ4t3_1njecti0Nz} # A static, case-sensitive flag.

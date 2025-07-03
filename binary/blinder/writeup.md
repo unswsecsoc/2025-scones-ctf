@@ -1,0 +1,25 @@
+# Writeup for `example challenge`
+
+|      author     | category | value |
+|-----------------|----------|-------|
+|    krishtilani  |    pwn   |  800  |
+
+sample description
+
+## Solution
+
+<details>
+<summary>Click here to reveal the solution!</summary>
+
+### The Big Idea
+
+Overwrite perror to printf. Get leak and ret2libc.
+
+### Walkthrough
+
+
+### Flag(s)
+
+- SCONES{1f_y0u_4r3_r34d1ng_7h15_1_h0p3_y0u_d13d_g3771ng_7h15_fl4g_bu7_c0ngr47z}
+
+</details>

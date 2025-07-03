@@ -1,0 +1,67 @@
+<%- include('partials/header', { title: 'Edit Post' }) %>
+
+<div class="row">
+  <form class="col s12" method="POST" action="/save">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Edit Blog Post</span>
+
+        <div class="input-field">
+          <input id="title" type="text" name="title" value="<%= post.title %>" required>
+          <label for="title" class="active">Title</label>
+        </div>
+
+        <div class="input-field">
+          <textarea id="content" name="content" class="materialize-textarea" required><%= post.content %></textarea>
+          <label for="content" class="active">Content</label>
+        </div>
+
+        <input type="hidden" name="public" value=false>
+      </div>
+
+      <div class="card-action">
+        <button type="submit" class="btn green">Save</button>
+        <% if (hacker) { %>
+          <span id="share-status" class="red-text" style="margin-left: 10px;">Hacker detected! Blog not saved.</span>
+        <% } %>
+      </div>
+    </div>
+  </form>
+  <!-- Make sure your post is public before sharing! -->
+  <button id="share-btn" class="btn blue">Share to admin</button>
+  <span id="share-status" class="green-text" style="margin-left: 10px;"></span>
+
+  <a href="/view/<%= encodeURIComponent(user) %>" class="btn orange" style="margin-left: 8px;">
+    View My Post
+  </a>
+</div>
+
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareBtn = document.getElementById('share-btn');
+    const shareStatus = document.getElementById('share-status');
+
+    shareBtn.addEventListener('click', async () => {
+      try {
+        const res = await fetch('/share', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+
+        if (res.ok) {
+          shareStatus.textContent = 'Post shared with admin!';
+        } else {
+          shareStatus.textContent = 'Share failed';
+        }
+      } catch (err) {
+        shareStatus.textContent = 'Error contacting server';
+      }
+    });
+  });
+</script>
+</body>
+</html>
+

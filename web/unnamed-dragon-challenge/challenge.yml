@@ -1,0 +1,33 @@
+name: unnamed dragon challenge
+author: Ixbixbam
+category: web
+description: |
+  I added a nice feature to this game that lets you use custom formatting, but when I asked the developers what they thought about it, they said it was vulnerable to XSS, and gave me a proof-of-concept save-game that proved that they could find out my browser! They also had the idea that someone could trick you into pasting in a malicious save game, which creates a popup asking you download some malware. 
+
+  Can you work out how to find what web browser I'm using if I paste the save game you give me at `/submit`? The flag is located where the web browser information would typically be.
+
+  Bonus: Do you think its worth the time for developers to fix this issue, and if so, how would you recommend solving it?
+
+type: dynamic
+extra:
+  initial: 400
+  decay: 50
+  minimum: 100
+
+flags:
+  - SCONES{cLi3nt_s1de_$anit1sati0n} # A static, case-sensitive flag.
+
+# Credit to:
+# - DemoninCG for making the original game (MIT https://github.com/DemoninCG/DodecaDragons)
+# - CTF-XSS-BOT for copying some files (MIT https://github.com/dimasma0305/CTF-XSS-BOT)
+
+hints:
+  - Have you bought and named your dragon yet?
+  - This challenge will be much easier if you check the website's source code using the Developer Tools and viewing the files in the Sources or Debugger tabs. You may find it helpful to find relevant code by Inspecting the element with the dragon name and seeing what JavaScript function it calls, or Inspecting the text import element.
+
+# Provides instructions on how to connect to a challenge.
+connection_info: https://unnamed-dragon-challenge.secso.cc/
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

@@ -1,0 +1,27 @@
+name: Sith
+author: rdttl
+category: hardware
+description: Just like a Sith lord, sometimes you may need to use the force to determine what a target may be trying to hide
+
+type: dynamic
+extra:
+    initial: 400
+    decay: 60
+    minimum: 100
+
+flags:
+    - SCONES{m3m0ry_hun7ing}
+
+hints:
+    - content: You need to dump, and then analyse the memory of the badge. ISP is the protocol, a USBasp is the device you'll need to communicate with this protocol. We should've provided one of these. You can find resources online to analyse the extracted hexfile.
+      cost: 0
+
+# files:
+#    - src/challenge.c
+
+attempts: 5
+
+requirements:
+    - Chirrut
+
+version: "0.1"

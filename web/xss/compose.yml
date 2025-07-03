@@ -1,0 +1,8 @@
+services:
+  server:
+    build: .
+    ports:
+      - "7001:7001"
+    environment:
+      - FLAG=SCONES{bl0gg1ng_1s_4w3s0m3}
+      - DOMAIN=https://xss.secso.cc

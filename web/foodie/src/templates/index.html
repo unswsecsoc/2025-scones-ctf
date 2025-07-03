@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SCONES Food Database</title>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+  <h2>SCONES Food Database</h2>
+  <form action="/search" method="GET">
+      <input type="text" name="query" id ="s" placeholder="find any ingredient..." />
+  </form>
+</body>
+</html>

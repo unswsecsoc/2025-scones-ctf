@@ -1,0 +1,27 @@
+name: Legacy
+author: rdttl
+category: hardware
+description: Powering on the device is a good next step to understanding how it functions. What is it trying to tell you here?
+
+type: dynamic
+extra:
+    initial: 400
+    decay: 60
+    minimum: 100
+
+flags:
+    - SCONES{w3lc0m3_t0_th3_b4dg3}
+
+hints:
+    - content: A slow-mo camera is going to be very useful again
+      cost: 0
+
+# files:
+#    - src/challenge.c
+
+# attempts: 5
+
+requirements:
+    - Chirrut
+
+version: "0.1"

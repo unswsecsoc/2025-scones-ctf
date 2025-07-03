@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+</head>
+<body class="grey lighten-4">
+  <nav>
+    <div class="nav-wrapper teal">
+      <a href="/" class="brand-logo center">Scone Blog</a>
+      <ul id="nav-mobile" class="right">
+        <% if (user) { %>
+          <li><a href="/logout" class="btn red" style="margin-right: 10px;">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login" class="btn green" style="margin-right: 10px;">Login</a></li>
+        <% } %>
+      </ul>
+    </div>
+  </nav>
+  <div class="container" style="margin-top: 40px;">

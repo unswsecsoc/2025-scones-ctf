@@ -1,0 +1,27 @@
+name: Chirrut
+author: rdttl
+category: hardware
+description: Physical inspection is a good first step. Where could we possibly hide something on the badge?
+
+type: dynamic
+extra:
+    initial: 400
+    decay: 60
+    minimum: 100
+
+flags:
+    - SCONES{welcome_to_scones25!}
+
+hints:
+    - content: ascii-code.com will be helpful here. Using a phone with character recognition will be quicker than manually decoding the message
+      cost: 0
+
+# files:
+#    - src/challenge.c
+
+# attempts: 5
+
+# requirements:
+#     - netcat
+
+version: "0.1"

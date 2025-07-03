@@ -1,0 +1,56 @@
+# Required sections, should be self-explanatory.
+name: forensic astronomy
+author: Ixbixbam
+category: recon
+description: |
+  Our security guard claims that the building wasn't vandalised while he was on duty because of this image, dated at midnight when his shift ended. However, the next security guard said that the building was vandalised when he arrived. Can you figure out what time this photo was genuinely taken within an hour of the actual time, given that it was taken on the night between the 23rd and 24th of June, 2025 somewhere close to Castle Hill.
+
+  Note: Please enter a 24 hour time in the following format without using the word SCONES: `HH:mm`. For example, if you think it was taken at 3:42 AM, please enter `03:42`. If the actual time was 4:41 AM, your flag would be accepted.
+type: dynamic
+# Specifies flag(s) for this challenge.
+# You must provide at least one.
+flags:
+  - type: regex # A static, case-insensitive flag.
+    content: "(18:[2-5]\\d)|(19:\\d\\d)|(20:[0-2]\\d)"
+    data: case_insensitive
+
+extra:
+  initial: 350
+  decay: 50
+  minimum: 75
+
+# Specifies hints that are used to give players a way to buy or have suggestions.
+# They are not required but are encouraged to keep players engaged.
+hints:
+  - The Earth completes a rotation every 24 hours, which means that the stars rotate along with it in the sky.
+  - I wonder if there are any tools which simulate the sky from different locations at different times.
+#     - content: This hint costs points
+#       cost: 10
+
+# Specifies files that will be accessible for this challenge during a CTF.
+# Paths are relative to the directory this file is in.
+files:
+  - src/image.jpg
+
+# Specifies the maximum number of attempts a participant can submit attempts.
+attempts: 3
+
+# Provides instructions on how to connect to a challenge.
+# If your challenge requires hosting, leave this be so the Projects team can play around with it.
+# connection_info: nc pwn.ctf.secso.cc 1337
+
+# Specifies additional metadata for custom challenge types.
+# The section below is a commented example of the metadata for a dynamically scored challenge.
+# If you wish to make your challenge dynamic, set the type to `dynamic` and uncomment below.
+# extra:
+#     initial: 500
+#     decay: 100
+#     minimum: 50
+
+# Requirements are used to make a challenge require another challenge to be solved before being available.
+# requirements:
+#     - netcat
+
+# Specifies what version of the challenge specification was used.
+# Subject to change until ctfcli v1.0.0
+version: "0.1"

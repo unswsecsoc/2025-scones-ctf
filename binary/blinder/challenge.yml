@@ -1,0 +1,23 @@
+name: "blinder"
+author: krishtilani
+category: binary
+description: |
+  docker can go and eat a big fat stinky poo.
+
+value: 500
+type: standard
+
+flags:
+  - SCONES{1f_y0u_4r3_r34d1ng_7h15_1_h0p3_y0u_d13d_g3771ng_7h15_fl4g_bu7_c0ngr47z}
+
+# Specifies files that will be accessible for this challenge during a CTF.
+# Paths are relative to the directory this file is in.
+files:
+  - src/chall
+  - libc.so.6
+  - ld-linux-x86-64.so.2
+
+connection_info: nc pwn.secso.cc 8004
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"

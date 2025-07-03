@@ -1,0 +1,25 @@
+name: "blind"
+author: krishtilani
+category: binary
+description: |
+  i have hidden some scones in this binary, can you find them?
+
+type: dynamic
+extra:
+  initial: 400
+  decay: 50
+  minimum: 100
+
+flags:
+  - SCONES{h3y_th0z3_w3r3_my_5c0n3z}
+
+# Specifies files that will be accessible for this challenge during a CTF.
+# Paths are relative to the directory this file is in.
+files:
+  - src/chall
+  - src/libc-2.31.so
+
+connection_info: nc pwn.secso.cc 8001
+
+# Specifies what version of the challenge specification was used.
+version: "0.1"
