@@ -1,0 +1,35 @@
+<%- include('partials/head'); %>
+
+<body>
+    <h1>Home</h1>
+    <p>
+        Our C++ compiler compiles your code!
+        <!-- TODO: find a way to run the code -->
+        <!-- Backslashes cause security concerns, so we're removing those :) -->
+        <form action="/compiler", method="POST">
+            <textarea rows="10" class="form-control textarea form-control" name="code" placeholder="Source code"></textarea>
+            <br>
+            <input class="form-control" type="submit" value="Submit">
+        </form>
+        <% if (locals.filename) { %>
+
+            <% if (success) { %>
+
+                Your file has been saved to <a href="uploads/<%= filename %>"><%= filename %></a>!
+               </a>
+            <% } else { %>
+                Your code encountered some issues while compiling!:
+                <hr>
+                stdout:
+                <pre>
+                    <%= result.stdout %>
+                </pre>
+                stderr:
+                <pre>
+                    <%= result.stderr %>
+                </pre>
+            <% } %>
+           
+        <% } %>
+    </p>
+</body>

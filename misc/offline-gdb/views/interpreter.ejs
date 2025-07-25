@@ -1,0 +1,22 @@
+<%- include('partials/head'); %>
+
+<body>
+    <h1>Home</h1>
+    <p>
+        Our JS interpreter runs JS code!
+        <% if (locals.result) { %>
+            <p>
+            "output" is:
+            <pre>
+                <%= result %>
+            </pre></p>
+        <% } %>
+
+        Here are some samples to try it on:
+        <ul>
+            <% for (let filename of files) { %>
+                <li><a href="uploads/js/<%= filename %>"><%= filename %></a> - <a href="/interpreter?path=js/<%= filename %>">Run</a></li>
+            <% } %>
+        </ul>
+    </p>
+</body>
