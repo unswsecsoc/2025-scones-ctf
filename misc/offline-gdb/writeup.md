@@ -74,7 +74,7 @@ int main(void){}
 
 (it's very cool to see how the syntax highlighting differs for the exact same piece of code haha)
 
-So now we have RCE. Using this we can run `ls` to get the flag file's name, and then print it out yields the flag.
+So now we have RCE. Using this we can run `ls` to get the flag file's name, and then print it out to yield the flag.
 
 ### Flag(s)
 
